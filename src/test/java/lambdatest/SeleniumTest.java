@@ -29,7 +29,7 @@ public class SeleniumTest {
   @BeforeTest
   @Parameters(value= {"browserName","version","platform"})
   public void setUp(String browserName, String version, String platform) throws Exception {
-   System.out.println("Browser Name - "+browserName+", Version - "+version+", Platform - "+platform);	  
+  // System.out.println("Browser Name - "+browserName+", Version - "+version+", Platform - "+platform);	  
    DesiredCapabilities capabilities = new DesiredCapabilities();
    capabilities.setCapability("browserName", browserName);
    capabilities.setCapability("version", version);
@@ -93,7 +93,7 @@ public class SeleniumTest {
    
    driver.navigate().to("https://www.lambdatest.com/selenium-playground");
    
-   driver.findElement(By.xpath("//a[text() = 'Drag & Drop Sliders']")).click();
+   driver.findElement(By.xpath("//a[text() = 'Drag & Drop Sliders']")).click(); // Click on Drag & Drop Sliders URL link
    
    WebElement slider = driver.findElement(By.xpath("//input[@value = '15']"));
      
@@ -105,7 +105,7 @@ public class SeleniumTest {
    
    Actions builder = new Actions(driver);
    
-   builder.moveToElement(slider).click().dragAndDropBy(slider,xCord-moveTo,0).build().perform();
+   builder.moveToElement(slider).click().dragAndDropBy(slider,xCord-moveTo,0).build().perform(); // Move the slider to 95
     
    WebElement sliderVal = driver.findElement(By.xpath("//input[@value = '15']/following-sibling::output"));
   
@@ -115,15 +115,16 @@ public class SeleniumTest {
 	   System.out.println(sliderVal.getText());
 	   if(Integer.valueOf(sliderVal.getText()) > 95 ) {
 		  
-		   moveTo = moveTo + 1;
+		   moveTo = moveTo + 1;  // If slider is above 95 decrease it
 		   builder.moveToElement(slider).click().dragAndDropBy(slider,xCord-moveTo,0).build().perform();
 	   }
 	   else {
 		   
-		   moveTo = moveTo - 1;
+		   moveTo = moveTo - 1; // Else increase it to 95
 		   builder.moveToElement(slider).click().dragAndDropBy(slider,xCord-moveTo,0).build().perform();
 	   }
    }
+   
    if(sliderVal.getText().equals("95"))
     {
        System.out.println("Slider is moved to range 95");
@@ -143,13 +144,13 @@ public class SeleniumTest {
 	  
 	  jse.executeScript("window.scrollBy(0,50)","");
       
-	  driver.findElement(By.xpath("//a[text() = 'Input Form Submit']")).click();       
+	  driver.findElement(By.xpath("//a[text() = 'Input Form Submit']")).click(); // Click on submit button without filling any fields
       
 	  driver.findElement(By.xpath("//button[text()='Submit']")).click();
       
        String alertMsg = driver.findElement(By.id("name")).getAttribute("validationMessage");
       
-       Assert.assertEquals(alertMsg,"Please fill out this field.");
+       Assert.assertEquals(alertMsg,"Please fill out this field."); // Assert validation message of name field
        
        driver.findElement(By.id("name")).sendKeys("John");
        
@@ -163,7 +164,7 @@ public class SeleniumTest {
       
        Select country = new Select(driver.findElement(By.xpath("//label[text()='Country*']/following-sibling::select")));
        
-       country.selectByVisibleText("United States");
+       country.selectByVisibleText("United States"); // Select country by matching with visible text
              
        driver.findElement(By.id("websitename")).sendKeys("https://google.com");      
        
@@ -183,7 +184,9 @@ public class SeleniumTest {
     	    && driver.findElement(By.cssSelector("p.success-msg")).isDisplayed() )
        {
               System.out.println("Success message displayed");      
-       } else {
+       } 
+       else 
+       {
                System.out.println("Success message not displayed");
        }
        
