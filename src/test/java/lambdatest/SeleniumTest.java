@@ -22,8 +22,8 @@ public class SeleniumTest {
 
   public RemoteWebDriver driver = null;
   public JavascriptExecutor jse = null;
-  String username = "mailtokesava3";
-  String accessKey = "uHokCFUiVl6egTYKIPg574dCrYMh9ZybCNHrIlTMn7CSVma3Ax";
+  String username = "user_name";
+  String accessKey = "access_key";
   
    
   @BeforeTest
@@ -115,12 +115,12 @@ public class SeleniumTest {
 	   System.out.println(sliderVal.getText());
 	   if(Integer.valueOf(sliderVal.getText()) > 95 ) {
 		  
-		   moveTo = moveTo + 2;
+		   moveTo = moveTo + 1;
 		   builder.moveToElement(slider).click().dragAndDropBy(slider,xCord-moveTo,0).build().perform();
 	   }
 	   else {
 		   
-		   moveTo = moveTo - 2;
+		   moveTo = moveTo - 1;
 		   builder.moveToElement(slider).click().dragAndDropBy(slider,xCord-moveTo,0).build().perform();
 	   }
    }
@@ -176,6 +176,8 @@ public class SeleniumTest {
        driver.findElement(By.id("inputState")).sendKeys("New York");
        
        driver.findElement(By.id("inputZip")).sendKeys("12001");
+       
+       driver.findElement(By.xpath("//button[text()='Submit']")).click();
        
        if(driver.findElement(By.cssSelector("p.success-msg")).getText().equals("Thanks for contacting us, we will get back to you shortly.")
     	    && driver.findElement(By.cssSelector("p.success-msg")).isDisplayed() )
