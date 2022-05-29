@@ -11,4 +11,4 @@ Make sure maven installed in your local machine
 
 Run this command to install dependencies - `mvn clean install`
 
-Once done run this command to run the test - `mvn test`
+Once done execute this command to run the test - `mvn test`
