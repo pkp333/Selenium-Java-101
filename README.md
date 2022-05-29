@@ -3,7 +3,7 @@ Selenium Java 101 Certification
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/pkp33/Selenium-Java-101)
 
-#Steps to run test suite
+# Steps to run test suite
 
 Replace the user name and access key values in /src/test/java/lambdatest/Selenium.java
 
