@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="methods" name="Failed suite [ChromeTestSuite]" verbose="0">
+  <parameter name="browserName" value="Firefox"/>
+  <parameter name="version" value="82.0"/>
+  <parameter name="platform" value="Windows 7"/>
+  <test thread-count="5" parallel="methods" name="Input Forms Test(failed)" verbose="0">
+    <classes>
+      <class name="lambdatest.SeleniumTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="inputFormsDemo"/>
+        </methods>
+      </class> <!-- lambdatest.SeleniumTest -->
+    </classes>
+  </test> <!-- Input Forms Test(failed) -->
+</suite> <!-- Failed suite [ChromeTestSuite] -->

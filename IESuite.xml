@@ -1,0 +1,38 @@
+
+<suite name="ChromeTestSuite" parallel="methods">
+ 
+  <parameter name = "browserName" value = "Internet Explorer"/>
+  <parameter name = "version" value = "11.0"/>
+  <parameter name = "platform" value = "Windows 10"/>
+
+  
+  <test name="Simple Form Demo">
+    <classes>
+      <class name="lambdatest.SeleniumTest"/>
+      <methods>
+       <include name = "simpleFormsDemo"/>
+      </methods>
+    </classes>
+  </test> 
+  
+ 
+ <test name = "Slider Test">
+  <classes>
+  <class name = "lambdatest.SeleniumTest"/>
+  <methods>
+       <include name = "sliderDemo"/>
+  </methods>
+  </classes>
+  </test>
+
+  
+  <test name = "Input Forms Test">
+  <classes>
+  <class name = "lambdatest.SeleniumTest"/>
+   <methods>
+       <include name = "inputFormsDemo"/>
+  </methods>
+  </classes>
+  </test>
+ 
+</suite>

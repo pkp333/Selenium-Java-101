@@ -1,0 +1,6 @@
+tasks:
+
+   - init: sudo apt install maven
+     command: mvn clean install
+
+

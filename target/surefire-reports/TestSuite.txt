@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 10.275 s <<< FAILURE! - in TestSuite
+setUp(lambdatest.SeleniumTest)  Time elapsed: 9.773 s  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: All minutes for this organization has been exhausted
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'keshav', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-30-generic', java.version: '17.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: Firefox, platformName: vista}], desiredCapabilities=Capabilities {browserName: Firefox, build: First Test, console: true, name: Sample Test, network: true, platform: VISTA, resolution: 1024x768, version: 82.0, video: true, visual: true}}]
+Capabilities {}
+	at lambdatest.SeleniumTest.setUp(SeleniumTest.java:45)
+
